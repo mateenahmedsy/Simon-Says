@@ -4,7 +4,7 @@ An interactive, hardware-based clone of the classic electronic memory game built
 
 ---
 
-## 📖 How It Works
+##  How It Works
 1. **The Challenge:** The game boots up, plays a welcome melody, flashes a random LED, and plays its corresponding tone.
 2. **The Turn:** The player must press the matching hardware button. 
 3. **The Progression:** Every time the player successfully copies the sequence, the game appends one new random step to the pattern and plays it back from the start.
@@ -12,7 +12,7 @@ An interactive, hardware-based clone of the classic electronic memory game built
 
 ---
 
-## 🛠️ Hardware Components
+##  Hardware Components
 * **Microcontroller:** Arduino Uno R3 (or compatible)
 * **Visuals:** 4x LEDs (Red, Green, Blue, Yellow recommended)
 * **Resistors:** 4x 220Ω or 330Ω current-limiting resistors (for LEDs)
@@ -22,7 +22,7 @@ An interactive, hardware-based clone of the classic electronic memory game built
 
 ---
 
-## 🔌 Pin Configuration
+##  Pin Configuration
 To streamline wiring, this project features an **active software-ground** trick for the buzzer. By setting Pin 4 to a continuous `LOW` state via code, you can plug the buzzer directly across Pins 3 and 4 without needing an extra line to the hardware Ground (`GND`) rail.
 
 | Component | Arduino Pin | Connection Type | Description |
@@ -40,14 +40,14 @@ To streamline wiring, this project features an **active software-ground** trick 
 
 ---
 
-## 🚀 Key Software Features
+##  Key Software Features
 * **True Random Initialization:** Uses a floating, unconnected analog pin (`A0`) to sample ambient atmospheric noise. This seeds the random number generator, ensuring a completely unique sequence every single time the board resets.
 * **Input State Locking:** Uses a blocking state loop (`while(digitalRead(...) == HIGH)`) that pauses execution until the player completely lifts their finger from the button. This cleanly eliminates double-triggering or accidental inputs.
 * **Scalable Arrays:** Configured out-of-the-box to handle complex memory sequences up to 100 levels deep.
 
 ---
 
-## 📜 License
+## License
 This project is open-source and licensed under the **MIT License**. 
 
 You are completely free to:
